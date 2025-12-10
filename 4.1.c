@@ -2,12 +2,10 @@
 #include<stdlib.h>
 #include<time.h>
 #include <stdbool.h>
+#include <stddef.h> // Для size_t
 
 /**
-* @brief считывает значение введённое с клавиатуры, с проверкой ввода
-* @return число 
-*/
-const long int get_sizearray(void);
+* @brief считывает размер массива с проверкой корректности ввода
 
 /**
 * @brief проверяет корректно ли выделена память под массив
@@ -131,7 +129,7 @@ int main(void)
     printf("\nМассив из %zu строк будет заполнен числами в диапазоне [%d;%d]\n\n", rows, min, max);
 
     printf("\nКак будет заполнен массив?\n%d - Ручное заполнение\n%d - Автоматическое заполнение\n", CHOISE_ONE, CHOISE_TWO);
-    int fir
+    int first_choise = get_int();
 
     switch (first_choise)
     {
@@ -190,13 +188,14 @@ const long int get_sizearray(void)
         fprintf(stderr, "Error 1\n");
         exit(1);
     }
-    if (output < 1)
+    int output = 0
+    if (!scanf_s("%ld", &output) || output <= 0)
     {
-        fprintf(stderr, "Error 2\n");
+        fprintf(stderr, "Error 1\n");
         exit(1);
     }
 
-    return output;
+    return (size_t)output;
 }
 
 void check_pointer(const int* arr)
@@ -334,9 +333,8 @@ void def_task_two(const int* arr, const size_t rows)
 
 void def_task_three(int* arr, const size_t rows)
 {
-    check_pointer(arr);st_choise = get_int();
-
-
+    check_pointer(arr);
+    first_choice = get_int();
 
     switch (first_choise)
     {
