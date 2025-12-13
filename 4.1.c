@@ -182,12 +182,6 @@ int main(void)
 
 const long int get_sizearray(void)
 {
-    long int output = 0;
-    if (!scanf_s("%ld", &output))
-    {
-        fprintf(stderr, "Error 1\n");
-        exit(1);
-    }
     int output = 0
     if (!scanf_s("%ld", &output) || output <= 0)
     {
@@ -333,10 +327,6 @@ void def_task_two(const int* arr, const size_t rows)
 
 void def_task_three(int* arr, const size_t rows)
 {
-    check_pointer(arr);
-    first_choice = get_int();
-
-    switch (first_choise)
     {
     case CHOISE_ONE:
         get_manual(main_array, rows, min, max);
