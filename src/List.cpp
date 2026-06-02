@@ -3,12 +3,6 @@
 #include <iostream>
 #include <sstream>
 
-List::Node::Node(int nodeValue)
-{
-	value = nodeValue;
-	next = nullptr;
-}
-
 List::List()
 {
 	head = nullptr;
@@ -95,8 +89,8 @@ void List::Copy(const List& other)
 
 	while (current != nullptr)
 	{
-		PushBack(current->value);
-		current = current->next;
+		PushBack(current->GetValue());
+		current = current->GetNext();
 	}
 }
 
@@ -104,7 +98,7 @@ void List::PushFront(int value)
 {
 	Node* node = new Node(value);
 
-	node->next = head;
+	node->SetNext(head);
 	head = node;
 	++size;
 }
@@ -121,12 +115,12 @@ void List::PushBack(int value)
 	{
 		Node* current = head;
 
-		while (current->next != nullptr)
+		while (current->GetNext() != nullptr)
 		{
-			current = current->next;
+			current = current->GetNext();
 		}
 
-		current->next = node;
+		current->SetNext(node);
 	}
 
 	++size;
@@ -156,13 +150,13 @@ void List::Insert(size_t index, int value)
 
 	for (size_t i = 0; i < index - 1; ++i)
 	{
-		current = current->next;
+		current = current->GetNext();
 	}
 
 	Node* node = new Node(value);
 
-	node->next = current->next;
-	current->next = node;
+	node->SetNext(current->GetNext());
+	current->SetNext(node);
 	++size;
 }
 
@@ -173,11 +167,11 @@ bool List::Remove(int value)
 		return false;
 	}
 
-	if (head->value == value)
+	if (head->GetValue() == value)
 	{
 		Node* deletedNode = head;
 
-		head = head->next;
+		head = head->GetNext();
 		delete deletedNode;
 		--size;
 
@@ -186,19 +180,19 @@ bool List::Remove(int value)
 
 	Node* current = head;
 
-	while (current->next != nullptr && current->next->value != value)
+	while (current->GetNext() != nullptr && current->GetNext()->GetValue() != value)
 	{
-		current = current->next;
+		current = current->GetNext();
 	}
 
-	if (current->next == nullptr)
+	if (current->GetNext() == nullptr)
 	{
 		return false;
 	}
 
-	Node* deletedNode = current->next;
+	Node* deletedNode = current->GetNext();
 
-	current->next = deletedNode->next;
+	current->SetNext(deletedNode->GetNext());
 	delete deletedNode;
 	--size;
 
@@ -214,9 +208,9 @@ int List::PopFront()
 	}
 
 	Node* deletedNode = head;
-	int value = deletedNode->value;
+	int value = deletedNode->GetValue();
 
-	head = head->next;
+	head = head->GetNext();
 	delete deletedNode;
 	--size;
 
@@ -229,12 +223,12 @@ bool List::Contains(int value) const
 
 	while (current != nullptr)
 	{
-		if (current->value == value)
+		if (current->GetValue() == value)
 		{
 			return true;
 		}
 
-		current = current->next;
+		current = current->GetNext();
 	}
 
 	return false;
@@ -246,13 +240,13 @@ bool List::Change(int oldValue, int newValue)
 
 	while (current != nullptr)
 	{
-		if (current->value == oldValue)
+		if (current->GetValue() == oldValue)
 		{
-			current->value = newValue;
+			current->SetValue(newValue);
 			return true;
 		}
 
-		current = current->next;
+		current = current->GetNext();
 	}
 
 	return false;
@@ -270,10 +264,10 @@ int List::GetValue(size_t index) const
 
 	for (size_t i = 0; i < index; ++i)
 	{
-		current = current->next;
+		current = current->GetNext();
 	}
 
-	return current->value;
+	return current->GetValue();
 }
 
 size_t List::GetSize() const
@@ -292,7 +286,7 @@ void List::Clear()
 	{
 		Node* deletedNode = head;
 
-		head = head->next;
+		head = head->GetNext();
 		delete deletedNode;
 	}
 
@@ -309,14 +303,14 @@ std::string List::ToString() const
 
 	while (current != nullptr)
 	{
-		stream << current->value;
+		stream << current->GetValue();
 
-		if (current->next != nullptr)
+		if (current->GetNext() != nullptr)
 		{
 			stream << ", ";
 		}
 
-		current = current->next;
+		current = current->GetNext();
 	}
 
 	stream << "}";
