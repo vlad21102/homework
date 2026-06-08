@@ -1,6 +1,6 @@
 #include "../header/Point.h"
 
-Point::Point(double xCoordinate, double yCoordinate, double zCoordinate)
+Point::Point(const double xCoordinate, const double yCoordinate, const double zCoordinate)
     : x(xCoordinate), y(yCoordinate), z(zCoordinate)
 {
 }
