@@ -9,7 +9,7 @@
  * @param text сообщение для пользователя
  * @return введённое значение
  */
-double getValue(const char* text);
+double getValue(const std::string text);
 
 /**
  * @brief Точка входа в программу
@@ -62,7 +62,7 @@ int main()
     return 0;
 }
 
-double getValue(const char* text)
+double getValue(const std::string text)
 {
     double value;
 
