@@ -20,7 +20,7 @@ public:
     * @param piquetShift - смещение от начала пикета
     * @param piquetLength - длина пикета
     */
-    Piquet(int piquetNumber = 0, double piquetShift = 0.0, double piquetLength = 100.0);
+    Piquet(const int piquetNumber = 0, const double piquetShift = 0.0, const double piquetLength = 100.0);
 
     /**
     * @brief Возвращает номер пикета
