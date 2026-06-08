@@ -19,7 +19,7 @@ public:
      * @param cylinderRadius - радиус основания цилиндра
      * @param cylinderHeight - высота цилиндра
      */
-    Cylinder(const Point& centerPoint, double cylinderRadius, double cylinderHeight);
+    Cylinder(const Point& centerPoint, const double cylinderRadius, const double cylinderHeight);
 
     /**
      * @brief Возвращает объём цилиндра
