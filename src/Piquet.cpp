@@ -7,12 +7,12 @@
 #include <limits>
 #include <sstream>
 
-bool AreDoublesEqual(double first, double second)
+bool AreDoublesEqual(const double first,const double second)
 {
     return std::fabs(first - second) <= std::numeric_limits<double>::epsilon();
 }
 
-std::string FormatDouble(double value)
+std::string FormatDouble(const double value)
 {
     std::ostringstream stream;
     stream << std::fixed << std::setprecision(2) << value;
@@ -30,7 +30,7 @@ std::string FormatDouble(double value)
     return text;
 }
 
-Piquet::Piquet(int piquetNumber, double piquetShift, double piquetLength)
+Piquet::Piquet(const int piquetNumber, const double piquetShift, const double piquetLength)
     : number(piquetNumber), shift(piquetShift), length(piquetLength)
 {
     if (shift < 0.0)
