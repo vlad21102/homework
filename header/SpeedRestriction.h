@@ -23,7 +23,7 @@ public:
     * @param finishPiquet - конец действия предупреждения
     * @param speed - ограничение скорости
     */
-    SpeedRestriction(const Piquet& startPiquet, const Piquet& finishPiquet, double speed);
+    SpeedRestriction(const Piquet& startPiquet, const Piquet& finishPiquet, const double speed);
 
     /**
     * @brief Возвращает начало действия предупреждения
