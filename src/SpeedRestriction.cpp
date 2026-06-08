@@ -7,7 +7,7 @@
 #include <limits>
 #include <sstream>
 
-SpeedRestriction::SpeedRestriction(const Piquet& startPiquet, const Piquet& finishPiquet, double speed)
+SpeedRestriction::SpeedRestriction(const Piquet& startPiquet, const Piquet& finishPiquet, const double speed)
     : start(startPiquet), finish(finishPiquet), speedLimit(speed)
 {
     if (finish < start)
