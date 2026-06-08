@@ -17,7 +17,7 @@ public:
      * @param yCoordinate - координата y
      * @param zCoordinate - координата z
      */
-    Point(double xCoordinate, double yCoordinate, double zCoordinate);
+    Point(const double xCoordinate, const double yCoordinate, const double zCoordinate);
 
     /**
      * @brief Возвращает координату x
