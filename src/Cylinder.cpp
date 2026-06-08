@@ -4,7 +4,7 @@
 #include <iostream>
 #include <numbers>
 
-Cylinder::Cylinder(const Point& centerPoint, double cylinderRadius, double cylinderHeight)
+Cylinder::Cylinder(const Point& centerPoint, const double cylinderRadius, const double cylinderHeight)
     : center(centerPoint), radius(cylinderRadius), height(cylinderHeight)
 {
     if (radius <= 0)
