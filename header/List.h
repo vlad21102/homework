@@ -93,7 +93,7 @@ public:
 	* @param index - индекс элемента
 	* @param value - добавляемое значение
 	*/
-	void Insert(const size_t index, int value);
+	void Insert(const size_t index, const int value);
 
 	/**
 	* @brief Удаляет элемент по значению
@@ -121,7 +121,7 @@ public:
 	* @param newValue - новое значение
 	* @return true, если элемент изменён
 	*/
-	bool Change(const int oldValue, int newValue);
+	bool Change(const int oldValue, const int newValue);
 
 	/**
 	* @brief Возвращает значение элемента
