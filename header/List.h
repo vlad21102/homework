@@ -29,7 +29,7 @@ public:
 	* @brief Создаёт список из набора значений
 	* @param values - набор значений
 	*/
-	List(std::initializer_list<int> values);
+	List(const std::initializer_list<int> values);
 
 	/**
 	* @brief Создаёт копию списка
@@ -80,27 +80,27 @@ public:
 	* @brief Добавляет элемент в начало списка
 	* @param value - добавляемое значение
 	*/
-	void PushFront(int value);
+	void PushFront(const int value);
 
 	/**
 	* @brief Добавляет элемент в конец списка
 	* @param value - добавляемое значение
 	*/
-	void PushBack(int value);
+	void PushBack(const int value);
 
 	/**
 	* @brief Добавляет элемент по индексу
 	* @param index - индекс элемента
 	* @param value - добавляемое значение
 	*/
-	void Insert(size_t index, int value);
+	void Insert(const size_t index, int value);
 
 	/**
 	* @brief Удаляет элемент по значению
 	* @param value - удаляемое значение
 	* @return true, если элемент удалён
 	*/
-	bool Remove(int value);
+	bool Remove(const int value);
 
 	/**
 	* @brief Удаляет первый элемент списка
@@ -113,7 +113,7 @@ public:
 	* @param value - искомое значение
 	* @return true, если элемент найден
 	*/
-	bool Contains(int value) const;
+	bool Contains(const int value) const;
 
 	/**
 	* @brief Изменяет значение элемента
@@ -121,14 +121,14 @@ public:
 	* @param newValue - новое значение
 	* @return true, если элемент изменён
 	*/
-	bool Change(int oldValue, int newValue);
+	bool Change(const int oldValue, int newValue);
 
 	/**
 	* @brief Возвращает значение элемента
 	* @param index - индекс элемента
 	* @return значение элемента
 	*/
-	int GetValue(size_t index) const;
+	int GetValue(const size_t index) const;
 
 	/**
 	* @brief Возвращает количество элементов списка
