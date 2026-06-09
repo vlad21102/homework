@@ -69,7 +69,7 @@ List& List::operator = (List&& other) noexcept
 	return *this;
 }
 
-List& List::operator << (int value)
+List& List::operator << (const int value)
 {
 	PushBack(value);
 
