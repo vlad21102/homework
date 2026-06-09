@@ -9,7 +9,7 @@ List::List()
 	size = 0;
 }
 
-List::List(std::initializer_list<int> values)
+List::List(const std::initializer_list<int> values)
 {
 	head = nullptr;
 	size = 0;
@@ -94,7 +94,7 @@ void List::Copy(const List& other)
 	}
 }
 
-void List::PushFront(int value)
+void List::PushFront(const int value)
 {
 	Node* node = new Node(value);
 
@@ -103,7 +103,7 @@ void List::PushFront(int value)
 	++size;
 }
 
-void List::PushBack(int value)
+void List::PushBack(const int value)
 {
 	Node* node = new Node(value);
 
@@ -126,7 +126,7 @@ void List::PushBack(int value)
 	++size;
 }
 
-void List::Insert(size_t index, int value)
+void List::Insert(const size_t index,const int value)
 {
 	if (index > size)
 	{
@@ -160,7 +160,7 @@ void List::Insert(size_t index, int value)
 	++size;
 }
 
-bool List::Remove(int value)
+bool List::Remove(const int value)
 {
 	if (head == nullptr)
 	{
@@ -217,7 +217,7 @@ int List::PopFront()
 	return value;
 }
 
-bool List::Contains(int value) const
+bool List::Contains(const int value) const
 {
 	Node* current = head;
 
@@ -234,7 +234,7 @@ bool List::Contains(int value) const
 	return false;
 }
 
-bool List::Change(int oldValue, int newValue)
+bool List::Change(const int oldValue, const int newValue)
 {
 	Node* current = head;
 
@@ -252,7 +252,7 @@ bool List::Change(int oldValue, int newValue)
 	return false;
 }
 
-int List::GetValue(size_t index) const
+int List::GetValue(const size_t index) const
 {
 	if (index >= size)
 	{
