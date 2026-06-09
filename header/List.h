@@ -67,7 +67,7 @@ public:
 	* @param value - добавляемое значение
 	* @return текущий список
 	*/
-	List& operator << (int value);
+	List& operator << (const int value);
 
 	/**
 	* @brief Оператор извлечения первого элемента списка
