@@ -14,7 +14,7 @@ public:
 	* @brief Создаёт элемент списка
 	* @param nodeValue - значение элемента
 	*/
-	Node(int nodeValue);
+	Node(const int nodeValue);
 
 	/**
 	* @brief Возвращает значение элемента
@@ -26,7 +26,7 @@ public:
 	* @brief Изменяет значение элемента
 	* @param newValue - новое значение
 	*/
-	void SetValue(int newValue);
+	void SetValue(const int newValue);
 
 	/**
 	* @brief Возвращает указатель на следующий элемент
@@ -38,5 +38,5 @@ public:
 	* @brief Изменяет указатель на следующий элемент
 	* @param nextNode - новый следующий элемент
 	*/
-	void SetNext(Node* nextNode);
+	void SetNext(const Node* nextNode);
 };
