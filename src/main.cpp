@@ -64,7 +64,7 @@ int main()
 
 double getValue(const std::string text)
 {
-    double value=0;
+    double value = 0;
 
     std::cout << prompt << std::endl;
     std::cin >> value;
